@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: calc(10px + 2vmin);
+    text-align: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.heading{
+    margin-bottom: 32px;
+}
+
+.formCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formCard input{
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: none;
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 8px;
+    min-width: 520px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+.formCard input:focus{
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.formCard input::placeholder{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.formCard button{
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.4);
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 8px;
+    min-width: 200px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+}
+.formCard button:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+.formCard button:active{
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+.formCard button:disabled{
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    cursor: not-allowed;
+}
+
+.formCard .errorMessage{
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.userDetailsCard{
+    display: flex;
+    margin: 10px;
+    margin-top: 32px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.36);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.userDetailsBody{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.userDetailsBody .name{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.userDetailsBody .username{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+.follow{
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 16px;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.profession{
+    margin-top: 12px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.location{
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 16px;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.userImg img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease-in-out;
+}
+
+/* For screens up to 980px */
+@media screen and (max-width: 980px) {
+    .formCard input {
+      min-width: 400px;
+    }
+  
+    .formCard button {
+      min-width: 180px;
+    }
+  
+    .userDetailsCard {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .userImg img {
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
+  
+    .userDetailsBody {
+      align-items: center;
+    }
+  }
+  
+  /* For screens up to 760px */
+  @media screen and (max-width: 760px) {
+    .formCard input {
+      min-width: 300px;
+    }
+  
+    .formCard button {
+      min-width: 160px;
+    }
+  
+    .container {
+      font-size: calc(10px + 1.5vmin);
+      padding: 1rem;
+      width: 80%;
+    }
+    .location{
+        font-size: 14px;
+        gap: 6px;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+  }
+  
+  /* For screens up to 480px */
+  @media screen and (max-width: 480px) {
+    .formCard input {
+      min-width: 90%;
+      font-size: 14px;
+    }
+  
+    .formCard button {
+      min-width: 90%;
+      font-size: 14px;
+    }
+  
+    .userImg img {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .userDetailsBody .name {
+      font-size: 1.2rem;
+    }
+  
+    .userDetailsBody .username {
+      font-size: 1rem;
+    }
+  
+    .follow, .location {
+      font-size: 14px;
+      gap: 6px;
+    }
+  
+    .profession {
+      font-size: 12px;
+    }
+  }
+  
+
+
+
+
+
